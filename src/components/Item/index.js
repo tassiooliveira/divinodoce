@@ -1,12 +1,9 @@
 import React from 'react'
-import { produtos } from '../../database'
 
+import imagem from '../../database/download.jpg'
 
-
-function Item({ nome, preço , quantidade , imagem}) {
+function Item({ nome, preço , quantidade , img}) {
     
-    const selectlist = document.getElementById("select-list");
-    const option = ''
     return (
         
         

@@ -9,7 +9,7 @@ function Produtos() {
     return (
         <>
         <div>
-            <h2 className='h2-titulo-ovos'>Ovos de Páscoa</h2>
+        <h2 className='h2-titulo-ovos'>Ovos de Páscoa</h2>
         </div>
         <div className='produtos-itens'>
         {produtos.map(( produtos, index) => <Item key={index} sabores={produtos.sabores} imagem={produtos.imagem} preço={produtos.preço} nome={produtos.nome}/>) }
