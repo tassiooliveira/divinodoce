@@ -5,7 +5,7 @@ function Nav() {
     return (
         <header>
             <nav className='nav-bar'>
-            <NavLink to='/'>
+            <NavLink className='navlink' to='/'>
             <div className='logo'>
                 DIVINO DOCE BY CARLA
             </div>
@@ -20,7 +20,7 @@ function Nav() {
 
     
                 
-                <a href="#">
+                <a href="https://www.instagram.com/divinodocebycarla/">
                     <img className='instagram-logo' alt='instagram' src="../instagram.png"></img>
                 </a>
 

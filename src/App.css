@@ -93,3 +93,7 @@ color: rgb(255, 112, 248);
 border-color: rgb(255, 112, 248);
 }
 
+.navlink {
+  text-decoration: none;
+  color: black;
+}

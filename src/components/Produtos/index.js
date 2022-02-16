@@ -1,13 +1,9 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.production.min'
 import Item from '../Item'
+import { produtos } from '../../database'
 
 function Produtos() {
 
-    const ShoppingCart = () => {
-        const [cart, setCart] = useState([])
-      }
-      
 
 
     return (
@@ -16,9 +12,9 @@ function Produtos() {
             <h2 className='h2-titulo-ovos'>Ovos de Páscoa</h2>
         </div>
         <div className='produtos-itens'>
-        <Item/>
-        <Item/>
-        <Item/>
+        {produtos.map(( produtos, index) => <Item key={index} sabores={produtos.sabores} imagem={produtos.imagem} preço={produtos.preço} nome={produtos.nome}/>) }
+        
+        
         </div>
         
         </>

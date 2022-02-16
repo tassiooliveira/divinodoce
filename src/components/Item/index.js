@@ -1,30 +1,29 @@
 import React from 'react'
+import { produtos } from '../../database'
 
 
-var axios = require("axios")
 
-function coletar(){
-  axios.get('https://sheetdb.io/api/v1/x8d3ojug32zca', {
-      "auth": {
-        "username": "4t25lu1l",
-        "password": "gdehwaqkwcoiv8flyi15"
-      }
-  })
-   .then( response => {
-        console.log(response.data);
-    });
-}
-
-function Item() {
+function Item({ nome, preço , quantidade , imagem, sabores}) {
+    
+    const selectlist = document.getElementById("select-list");
+    const option = ''
     return (
-
+        
         
         <li>
-        <h2>OVO M</h2>
-        <span>R$ 10,00</span>
+        <h2>{nome}</h2>
+        <img alt='imagem do produto' src={imagem}></img>
+        <span>{preço}</span>
+        <select id='select-list' name="select">
+        <option value="valor1" >Escolha um Sabor</option>
+        <option value="valor2" >Ninho com Nutella</option>
+        <option value="valor3">M&M</option>
+        
+        </select>
+        
         <button>ADICIONAR</button>
         </li>
     )
+    
 }
-
 export default Item
