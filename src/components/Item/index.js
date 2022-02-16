@@ -3,7 +3,7 @@ import { produtos } from '../../database'
 
 
 
-function Item({ nome, preço , quantidade , imagem, sabores}) {
+function Item({ nome, preço , quantidade , imagem}) {
     
     const selectlist = document.getElementById("select-list");
     const option = ''

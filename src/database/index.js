@@ -4,7 +4,6 @@ export const produtos = [
         preço: 50.00,
         img: "teste",
         quantidade: 10,
-        sabores: ["M&M" , "OREO", "NUTELLA"]
 
     },
     {
