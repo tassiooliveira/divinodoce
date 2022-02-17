@@ -1,18 +1,19 @@
 import React from 'react';
-import Item from '../Item'
-
+import { carrinho } from '../../database';
+import Itemcarrinho from '../Itemcarrinho';
 
 
 
 function Carrinho() {
   return (
     <>
-    <div>
+
     <h2 className='h2-titulo-ovos'>Carrinho</h2>
       
-      </div>
     <div className='produtos-itens'>
-      <Item/>
+        {carrinho.map(( carrinho, index) => <Itemcarrinho key={index}  carrinho={carrinho}/>) }
+        
+        
    </div>
     </>
     

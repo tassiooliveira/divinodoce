@@ -2,23 +2,25 @@ import React from 'react'
 
 import imagem from '../../database/download.jpg'
 
-function Item({ nome, preço , quantidade , img}) {
+
+function Item({ itemIndex, produtos, adicionar, remover}) {
     
     return (
         
         
         <li>
-        <h2>{nome}</h2>
+        <h2>{produtos.nome}</h2>
         <img alt='imagem do produto' src={imagem}></img>
-        <span>{preço}</span>
+        <span>{produtos.preço}</span>
         <select id='select-list' name="select">
-        <option value="valor1" >Escolha um Sabor</option>
-        <option value="valor2" >Ninho com Nutella</option>
-        <option value="valor3">M&M</option>
+        <option value="" >Escolha um Sabor</option>
+        <option value="Ninho com Nutella" >Ninho com Nutella</option>
+        <option value="M&M">M&M</option>
         
         </select>
         
-        <button>ADICIONAR</button>
+        <button onClick={() => adicionar(produtos)}>ADICIONAR</button>
+        
         </li>
     )
     
