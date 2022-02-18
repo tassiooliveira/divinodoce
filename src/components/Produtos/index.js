@@ -15,7 +15,7 @@ function Produtos() {
     function adicionar(item) {
         const itemcart = {item}
         setCarrinho([...carrinho,itemcart])
-        setTexto(carrinho.length+1)
+        
         
     }
 
@@ -24,18 +24,14 @@ function Produtos() {
         setCarrinho(filteredCart)
     }
 
-    function setartexto(){
-        
-    }
-
     function finalizar() {
-       window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=Quantidade de Itens= ${texto}`)
+       window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=Quantidade de Itens= ${carrinho.length}`)
     }
 
     const contadorcart = carrinho.length>0 ? carrinho.length : ''
 
     const botaofinalizar = (carrinho.length>0) ? 'button-finalizar' : 'button-finalizar-oculto'
-    const nomecarrinho = (carrinho.length>0) ? 'produtos-itens-div' : 'produtos-itens-div-oculto'
+    const nomecarrinho = (carrinho.length>0) ? 'h2-titulo-ovos' : 'h2-titulo-ovos-oculto'
 
     return (
         <>
@@ -46,7 +42,7 @@ function Produtos() {
         {produtos.map(( produtos, index) => <Item key={index} produtos={produtos} adicionar={adicionar}/>) }
         </div>
 
-        <h2 className='produtos-itens-div'>Carrinho<span>{contadorcart}</span></h2>
+        <h2 className={nomecarrinho}>Carrinho ({carrinho.length})</h2>
       
         <div className='carrinho-itens-div'>
         {carrinho.map(( carrinho, index) => <Itemcarrinho key={index}  remover={remover} itemIndex={index} carrinho={carrinho}/>) }
