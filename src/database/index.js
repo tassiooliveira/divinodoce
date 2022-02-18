@@ -16,7 +16,8 @@ export const produtos = [
         nome: "Ovo G",
         preço: "R$ 35,00",
         img: "teste",
-        quantidade: 10
+        quantidade: 10,
+        teste: "2"
     },
     {
         nome: "Ovo GG",
@@ -33,6 +34,13 @@ export const carrinho = [{
 }
 ]
 
+export  const list = [
+{sabor: "Escolha aqui"},
+{sabor: "OREO"},
+{sabor: "NINHO COM NUTELLA"},
+{sabor: "M&M"},
+{sabor: "KITKAT"}
+]
 
 
 

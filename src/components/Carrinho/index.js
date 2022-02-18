@@ -12,9 +12,11 @@ function Carrinho() {
       
     <div className='produtos-itens'>
         {carrinho.map(( carrinho, index) => <Itemcarrinho key={index}  carrinho={carrinho}/>) }
+
         
         
    </div>
+   
     </>
     
       

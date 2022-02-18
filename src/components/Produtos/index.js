@@ -9,12 +9,13 @@ import Itemcarrinho from '../Itemcarrinho'
 
 function Produtos() {
 
-
     const [carrinho, setCarrinho] = useState([])
+    const [texto, setTexto] = useState([])
 
     function adicionar(item) {
         const itemcart = {item}
         setCarrinho([...carrinho,itemcart])
+        setTexto(carrinho.length+1)
         
     }
 
@@ -23,22 +24,38 @@ function Produtos() {
         setCarrinho(filteredCart)
     }
 
+    function setartexto(){
+        
+    }
+
+    function finalizar() {
+       window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=Quantidade de Itens= ${texto}`)
+    }
+
+    const contadorcart = carrinho.length>0 ? carrinho.length : ''
+
+    const botaofinalizar = (carrinho.length>0) ? 'button-finalizar' : 'button-finalizar-oculto'
+    const nomecarrinho = (carrinho.length>0) ? 'produtos-itens-div' : 'produtos-itens-div-oculto'
+
     return (
         <>
         <div>
         <h2 className='h2-titulo-ovos'>Ovos de Páscoa</h2>
         </div>
-        <div className='produtos-itens'>
-        {produtos.map(( produtos, index) => <Item key={index}  produtos={produtos} adicionar={adicionar}/>) }
-        {console.log(carrinho)}
+        <div className='produtos-itens-div'>
+        {produtos.map(( produtos, index) => <Item key={index} produtos={produtos} adicionar={adicionar}/>) }
         </div>
-        <h2 className='h2-titulo-ovos'>Carrinho</h2>
+
+        <h2 className='produtos-itens-div'>Carrinho<span>{contadorcart}</span></h2>
       
-        <div className='produtos-itens'>
-        {carrinho.map(( carrinho, index) => <Itemcarrinho key={index} remover={remover} itemIndex={index} carrinho={carrinho}/>) }
-        
+        <div className='carrinho-itens-div'>
+        {carrinho.map(( carrinho, index) => <Itemcarrinho key={index}  remover={remover} itemIndex={index} carrinho={carrinho}/>) }
         
         </div>
+        <div className='div-finalizar'>
+        <button onClick={finalizar} className={botaofinalizar} >Finalizar</button>
+        </div>
+        
         </>
         
     )
