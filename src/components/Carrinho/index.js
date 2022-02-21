@@ -24,7 +24,6 @@ function Carrinho() {
       <div className='div-finalizar'>
       <button onClick={finalizar} className={botaofinalizar} >Finalizar</button>
       </div>
-      {console.log(carrinho)}
     </>
     
       
