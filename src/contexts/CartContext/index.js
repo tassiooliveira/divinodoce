@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     }
 
     function finalizar() {
-       window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=Quantidade de Itens= ${carrinho.length}`)
+       window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=*Novo Pedido*%0AQuantidade de Itens= ${carrinho.length}`)
     }
     
     

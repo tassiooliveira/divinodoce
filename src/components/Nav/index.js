@@ -18,7 +18,9 @@ function Nav() {
             <a href="https://www.instagram.com/divinodocebycarla/">
                     <img className='img-nav-bar' alt='instagram' src="../instagram.png"></img>
                 </a>
-               
+                <a href="https://api.whatsapp.com/send?phone=5579999015361">
+                    <img className='img-nav-bar' alt='whatsapp' src="../whatsapp.png"></img>
+                </a>
                <NavLink className='navlink' to='/carrinho'>
                     <img className='img-nav-bar' alt='carrinho' src="../carrinho.png"></img>
                     <span className='navlink-carrinho' >{carrinho.length}</span>
