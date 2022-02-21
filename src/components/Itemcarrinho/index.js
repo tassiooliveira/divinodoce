@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
-import imagem from '../../database/download.jpg'
 
 
-function Itemcarrinho({ itemIndex, carrinho, remover}) {
-    
+
+function Itemcarrinho({ itemIndex, carrinho}) {
+
+    const { remover } = useContext(CartContext)
+
     return (
-        
         
         <li className='item-carrinho'>
        
-        <img className='img-carrinho' alt='imagem do produto' src={imagem}></img>
+        <img className='img-carrinho' alt='imagem do produto' src={carrinho.item.img}></img>
         <span>{carrinho.item.nome}</span>
         <span>{carrinho.item.preço}</span>
         <button onClick={() => remover(itemIndex)}>REMOVER</button>
+        
         </li>
     )
     

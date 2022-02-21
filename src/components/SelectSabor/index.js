@@ -7,7 +7,7 @@ function SelectSabor() {
   return (    
     <>
     <select id='select-list' name="select">
-        {list.map(( list ) => <option  value={list.sabor} >{list.sabor}</option>)}
+        {list.map(( list, index ) => <option  key={index} value={list.sabor} >{list.sabor}</option>)}
     </select>
 
 
