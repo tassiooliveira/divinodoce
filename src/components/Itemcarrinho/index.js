@@ -14,7 +14,7 @@ function Itemcarrinho({ itemIndex, carrinho}) {
        
         <img className='img-carrinho' alt='imagem do produto' src={carrinho.item.img}></img>
         <span>{carrinho.item.nome}</span>
-        <span>{carrinho.item.preço}</span>
+        <span>R${carrinho.item.preço}</span>
         <button onClick={() => remover(itemIndex)}>REMOVER</button>
         
         </li>
