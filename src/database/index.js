@@ -1,27 +1,27 @@
 export const produtos = [
     {
         nome: "Ovo P",
-        preço: 25,
+        preco: 25,
         img: "/download.jpg",
         quantidade: 10,
 
     },
     {
         nome: "Ovo M",
-        preço: 30,
+        preco: 30,
         img:  "/download.jpg",
         quantidade: 10
     },
     {
         nome: "Ovo G",
-        preço: 35,
+        preco: 35,
         img:  "/download.jpg",
         quantidade: 10,
         teste: "2"
     },
     {
         nome: "Ovo GG",
-        preço: 40,
+        preco: 40,
         img:  "/download.jpg",
         quantidade: 10
     }

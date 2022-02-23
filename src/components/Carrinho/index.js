@@ -6,11 +6,10 @@ import Itemcarrinho from '../Itemcarrinho'
 
 function Carrinho() {
 
-  const { carrinho, finalizar, precototal } = useContext(CartContext)
+  const { carrinho, finalizar} = useContext(CartContext)
 
   const botaofinalizar = (carrinho.length>0) ? 'button-finalizar' : 'button-finalizar-oculto'
   const titulocarrinho = (carrinho.length>0) ? 'Carrinho' : 'Seu carrinho está vazio'
-
 
   return (
     <>
@@ -22,9 +21,8 @@ function Carrinho() {
       
       </div>
       <div className='div-finalizar'>
-      <button onClick={finalizar} className={botaofinalizar} >Finalizar R$</button>
+      <button onClick={finalizar} className={botaofinalizar} >Finalizar</button>
       </div>
-      {console.log(precototal)}
     </>
     
       

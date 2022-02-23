@@ -18,7 +18,7 @@ function Item({produtos}) {
         
         <img alt='imagem do produto' src={produtos.img}></img>
         <h2>{produtos.nome}</h2>
-        <span>R${produtos.preço}</span>
+        <span>R$ {produtos.preco},00</span>
         <span>Escolha 1 sabor:</span>
         <SelectSabor/>
         
