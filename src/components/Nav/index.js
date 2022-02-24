@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 function Nav() {
 
-    const { carrinho } = useContext(CartContext)
+    const { carrinho, setcarrinho } = useContext(CartContext)
 
     return (
         <header>
@@ -21,7 +21,7 @@ function Nav() {
                 <a href="https://api.whatsapp.com/send?phone=5579999015361">
                     <img className='img-nav-bar' alt='whatsapp' src="../whatsapp.png"></img>
                 </a>
-               <NavLink className='navlink' to='/carrinho'>
+               <NavLink onClick={setcarrinho} className='navlink' to='/carrinho'>
                     <img className='img-nav-bar' alt='carrinho' src="../carrinho.png"></img>
                     <span className='navlink-carrinho' >{carrinho.length}</span>
                </NavLink>

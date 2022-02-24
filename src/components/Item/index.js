@@ -10,6 +10,8 @@ function Item({produtos}) {
 
     const { adicionar } = useContext(CartContext)
     
+    const itemprecoBRL = produtos.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
     return (
         
         
@@ -18,11 +20,15 @@ function Item({produtos}) {
         
         <img alt='imagem do produto' src={produtos.img}></img>
         <h2>{produtos.nome}</h2>
-        <span>R$ {produtos.preco},00</span>
+        <span>{itemprecoBRL}</span>
+        <div className='div-sabor'>
         <span>Escolha 1 sabor:</span>
         <SelectSabor/>
+        </div>
         
-        <button onClick={() => adicionar(produtos)}>ADICIONAR</button>
+        
+        
+        <button className='botaopadrao' onClick={() => adicionar(produtos)}>ADICIONAR</button>
         </li>
     )
     
