@@ -31,7 +31,7 @@ export  const list = [
 {sabor: "Escolha aqui"},
 {sabor: "OREO"},
 {sabor: "NINHO COM NUTELLA"},
-{sabor: "M&M"},
+{sabor: "MM"},
 {sabor: "KITKAT"}
 ]
 
