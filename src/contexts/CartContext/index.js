@@ -7,24 +7,20 @@ export const CartProvider = ({ children }) => {
     
     
     const [carrinho, setCarrinho] = useState([])
-    const [saborescolhido, setSaborescolhido] = useState()
 
     const totalPreco = carrinho.reduce((acc, current)=> acc + current.preco,0)
     const totalprecoBRL = totalPreco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
+    
+
     function adicionar(item) {
-        
+
         const itemcart = { nome: item.nome,
         preco: item.preco,
         img: item.img,
         quantidade: item.quantidade,
-        sabor: saborescolhido}
+        sabor: document.getElementById('select-list').value}
         setCarrinho([...carrinho,itemcart]) 
-    }
-
-
-    function changesabor(e){
-       setSaborescolhido(e.target.value)
     }
 
     function remover(clickItemIndex){
@@ -43,6 +39,6 @@ export const CartProvider = ({ children }) => {
     
     
     return (
-     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, changesabor}}>{children}</CartContext.Provider>
+     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL}}>{children}</CartContext.Provider>
     )
 }

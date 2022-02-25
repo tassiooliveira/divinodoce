@@ -1,18 +1,13 @@
 import { list } from '../../database'
-import React, { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
+import React from 'react';
 
 
 
 function SelectSabor() {
   
-
-  const { changesabor } = useContext(CartContext)
- 
-
   return (    
     <>
-    <select onChange={changesabor} id='select-list' name="select">
+    <select id='select-list' name="select">
         {list.map(( list, index ) => <option  key={index} value={list.sabor} >{list.sabor}</option>)}
     </select>
 
