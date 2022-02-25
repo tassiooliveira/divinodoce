@@ -35,7 +35,7 @@ export const CartProvider = ({ children }) => {
     
 
     function finalizar() {
-        const mapcarrinho = carrinho.map((carrinho) => `- ${carrinho.nome}(${carrinho.sabor}) = ${carrinho.preco}%0A`)
+        const mapcarrinho = carrinho.map((carrinho) => `- ${carrinho.nome}(${carrinho.sabor}) = ${carrinho.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}%0A`)
        window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=✅ *NOVO PEDIDO*%0A -----------------------------------------
        %0A▶ *RESUMO DO PEDIDO*%0A%0A${mapcarrinho.join('')}%0AQuantidade de Itens = ${carrinho.length}%0A-----------------------------------------%0A*TOTAL DO PEDIDO=* ${totalprecoBRL}`)
     }
