@@ -8,15 +8,15 @@ function Itemcarrinho({ itemIndex, carrinho}) {
 
     const { remover} = useContext(CartContext)
 
-    const itemprecoBRL = carrinho.item.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    const itemprecoBRL = carrinho.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
     return (
         
         <li className='item-carrinho'>
         
-        <img className='img-carrinho' alt='imagem do produto' src={carrinho.item.img}></img>
+        <img className='img-carrinho' alt='imagem do produto' src={carrinho.img}></img>
         
-        <span>{carrinho.item.nome} - Ninho com Nutella</span>
+        <span>{carrinho.nome} - {carrinho.sabor}</span>
         
         <div className='div-especific-carrinho'>
         <span>{itemprecoBRL}</span>
