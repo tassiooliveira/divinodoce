@@ -5,21 +5,24 @@ export const CartContext = createContext({})
 export const CartProvider = ({ children }) => {
     
     
-    
+    const [saborescolhido, setSaborescolhido] = useState()
     const [carrinho, setCarrinho] = useState([])
-
     const totalPreco = carrinho.reduce((acc, current)=> acc + current.preco,0)
     const totalprecoBRL = totalPreco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
+
+    function onchange(e){
+        setSaborescolhido(e.target.value)
+    }
     
 
     function adicionar(item) {
-
+        
         const itemcart = { nome: item.nome,
         preco: item.preco,
         img: item.img,
         quantidade: item.quantidade,
-        sabor: document.getElementById('select-list').value}
+        sabor: saborescolhido}
         setCarrinho([...carrinho,itemcart]) 
     }
 
@@ -39,6 +42,6 @@ export const CartProvider = ({ children }) => {
     
     
     return (
-     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL}}>{children}</CartContext.Provider>
+     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, onchange}}>{children}</CartContext.Provider>
     )
 }
