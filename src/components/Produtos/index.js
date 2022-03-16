@@ -1,6 +1,5 @@
 import Item from '../Item'
 import { produtos } from '../../database'
-import Modalitem from '../Modalitem'
 
 
 
