@@ -1,37 +1,45 @@
 export const produtos = [
     {
         id: 0,
-        nome: "Ovo de KitKat",
-        preco: 25,
-        preco2:30,
-        preco3:35,
-        img: "/download.jpg",
+        nome: "Ovo PP",
+        preco: 35.50,
+        img:  "/download.jpg",
         quantidade: 10,
-        sabor: [{sabor: "Escolha aqui"},
-        {sabor: "PP"},
-        {sabor: "P"},
-        {sabor: "M"},
-        {sabor: "G"},
-        {sabor: "GG"}]
+        sabor: ''
 
     },
     {
+        id: 1,
+        nome: "Ovo P",
+        preco: 35.50,
+        img:  "/download.jpg",
+        quantidade: 10,
+        sabor: ''
+
+    },
+    {
+        id: 2,
         nome: "Ovo M",
         preco: 30.50,
         img:  "/download.jpg",
-        quantidade: 10
+        quantidade: 10,
+        sabor: ''
     },
     {
+        id: 3,
         nome: "Ovo G",
         preco: 35,
         img:  "/download.jpg",
-        quantidade: 10
+        quantidade: 10,
+        sabor: ''
     },
     {
+        id: 4,
         nome: "Ovo GG",
         preco: 40,
         img:  "/download.jpg",
-        quantidade: 10
+        quantidade: 10,
+        sabor: ''
     }
 ]
 

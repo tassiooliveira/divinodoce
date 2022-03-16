@@ -3,8 +3,11 @@ import { createContext, useState} from "react";
 export const CartContext = createContext({})
 
 export const CartProvider = ({ children }) => {
-    
+
+
+    const [indexitem, setIndexitem] = useState(0)
     const [modal, setModal] = useState('modal-none')
+    const [modalitem, setModalitem] = useState('modal-noneitem')
     const [saborescolhido, setSaborescolhido] = useState()
     const [dataescolhida, setDataescolhida] = useState("0")
     const [datanomeescolhida, setDatanomeescolhida] = useState("04/04/2022")
@@ -27,7 +30,16 @@ export const CartProvider = ({ children }) => {
         }
        
     }
-    
+
+    function onclickitem(item) {
+        setIndexitem(item.id)
+        setModalitem('modalitem')
+    }
+    function fecharmodalitem() {
+        setModalitem('modal-noneitem')
+    }
+
+
     function abrirmodal() {
         setModal('modal')
     }
@@ -35,18 +47,19 @@ export const CartProvider = ({ children }) => {
         setModal('modal-none')
     }
 
-
     function adicionar(item) {
-        const itemcart = { nome: item.nome,
+        const itemcart = { 
+            id: item.id,
+            nome: item.nome,
             preco: item.preco,
             img: item.img,
             quantidade: item.quantidade,
             sabor: saborescolhido}
-        if (item.quantidade>0) {
+         if (item.quantidade>0) {
             setCarrinho([...carrinho,itemcart]) 
-        } else {
+         } else {
             alert('Produto fora do estoque')
-        }
+       }
         
         
     }
@@ -61,12 +74,12 @@ export const CartProvider = ({ children }) => {
     function finalizar() {
         const mapcarrinho = carrinho.map((carrinho) => `- ${carrinho.nome} (${carrinho.sabor}) = ${carrinho.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}%0A`)
        window.open(`https://api.whatsapp.com/send?phone=5579996508340&text=✅ *NOVO PEDIDO*%0A -----------------------------------------
-       %0A▶ *RESUMO DO PEDIDO*%0A%0A${mapcarrinho.join('')}%0AQuantidade de Itens = ${carrinho.length}%0A-----------------------------------------%0A*TOTAL DO PEDIDO=* ${totalprecoBRL}%0A*DATA ESCOLHIDA*${datanomeescolhida}`)
+       %0A▶ *RESUMO DO PEDIDO*%0A%0A${mapcarrinho.join('')}%0AQuantidade de Itens = ${carrinho.length}%0A-----------------------------------------%0A*TOTAL DO PEDIDO=* ${totalprecoBRL}%0A*DATA ESCOLHIDA=* ${datanomeescolhida}`)
     }
     
     
     
     return (
-     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, onchange, modal, abrirmodal, fecharmodal, onchangedata, dataescolhida, datanomeescolhida}}>{children}</CartContext.Provider>
+     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, onchange, modal, abrirmodal, fecharmodal, onchangedata, dataescolhida, datanomeescolhida, onclickitem, fecharmodalitem, modalitem, indexitem}}>{children}</CartContext.Provider>
     )
 }

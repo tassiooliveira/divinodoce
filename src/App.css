@@ -26,11 +26,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 15px;
+  padding-right: 5px;
   gap: 10px;
 }
 .img-nav-bar {
   height: 40px;
+  display: block;
  }
 
 .nav-bar {
@@ -109,7 +110,7 @@ background-color:#f596a8;
 
 .div-finalizar{
   display: flex;
-  width: 60vw;
+  width: 90vw;
   background-color: #ffffff;
   flex-direction: column;
   align-items: center;
@@ -142,9 +143,12 @@ background-color:#f596a8;
 }
 
 .navlink-carrinho{
-  background-color: #f596a8;
   padding: 0 3px 0 3px;
-  border-radius: 5px;
+  background-color: #f596a8;
+  border-radius: 50px;
+  position: absolute;
+  right: 10px;
+  top: -3px;
 }
 
 .logo{
@@ -244,3 +248,81 @@ gap: 10px;
   gap: 20px;
 }
 
+.modalitem {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: fixed; 
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;  
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+ 
+}
+
+
+.modal-noneitem {
+  display: none; 
+}
+
+.modal-contentitem {
+  background-color: #fefefe;
+  height: 500px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  border-radius: 50px; 
+}
+
+.closeitem {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeitem:hover,
+.closeitem:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.div-modalitem{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkbox {
+  width: 40px;
+  height: 40px;
+}
+
+.navlink-div-geral{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  background: #f596a8;
+  border-radius: 60px;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.div-botaoflutuante{
+position: relative;
+border: 2px double white;
+border-radius: 50px;
+padding: 10px;
+}
+
+.navlink-div-geral-oculto{
+display: none;
+}

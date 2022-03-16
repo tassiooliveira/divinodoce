@@ -8,7 +8,7 @@ function Itemcarrinho({ itemIndex, carrinho}) {
 
     const { remover} = useContext(CartContext)
 
-    const itemprecoBRL = carrinho.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+     const itemprecoBRL = carrinho.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
     return (
         

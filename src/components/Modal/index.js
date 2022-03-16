@@ -13,11 +13,11 @@ function Modal() {
 
   return (
       <>
-        <div id="myModal" class={modal}>
+      <div id="myModal" className={modal}>
     
-      <div class="modal-content">
-        <span onClick={fecharmodal} class="close">&times;</span>
-        <div class='div-modal'>
+      <div className="modal-content">
+        <span onClick={fecharmodal} className="close">&times;</span>
+        <div className='div-modal'>
         <h2>Preencha os dados:</h2>
         <form>
         <span>Data:</span>
@@ -27,7 +27,7 @@ function Modal() {
         <select id='select-list' name="select">
         {datas[dataescolhida].horarios.map((horarios, index) => <option  key={index} value={horarios}>{horarios}</option> )}
         </select>
-        <button onClick={finalizar}>Confirmar pedido</button>
+        <button className='botaopadrao' onClick={finalizar}>Confirmar pedido</button>
         
         </form>
         </div>
