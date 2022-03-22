@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
 
 
     function adicionar(item) {
-        const itemid = item.id.toString();
+        const itemid = item.nomeid.toString();
         const pegarsabor = document.getElementById(itemid).value
 
         if (pegarsabor !== 'Sabores') {

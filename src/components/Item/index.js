@@ -23,7 +23,7 @@ function Item({produtos}) {
         <h4>{itemprecoBRL}</h4>
         </div>
         <span>Escolha o sabor:</span>
-        <select onChange={onchange} id={produtos.id} name="select">
+        <select onChange={onchange} id={produtos.nomeid} name="select">
         {list.map((sabor, index) => <option  key={index} value={sabor.sabor}>{sabor.sabor}</option> )}
         </select>
         <button className='botaopadrao'  onClick={() => adicionar(produtos)} > Adicionar </button>

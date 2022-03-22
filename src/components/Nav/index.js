@@ -16,10 +16,10 @@ function Nav() {
            
             <div className='carrinho-button'>
 
-            <a href="https://www.instagram.com/divinodocebycarla/">
+                <a href="https://www.instagram.com/divinodocebycarla/" target="_blank" rel="noopener noreferrer">
                     <img className='img-nav-bar' alt='instagram' src="../instagram.png"></img>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=5579999015361">
+                <a  href="https://api.whatsapp.com/send?phone=5579999015361" target="_blank" rel="noopener noreferrer">
                     <img className='img-nav-bar' alt='whatsapp' src="../whatsapp.png"></img>
                 </a>
               
