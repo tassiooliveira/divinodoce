@@ -2,7 +2,7 @@ export const produtos = [
     {
         id: 0,
         nome: "Ovo PP",
-        preco: 35.50,
+        preco: 10.0,
         img:  "/download.jpg",
         quantidade: 10,
         sabor: ''
@@ -11,7 +11,7 @@ export const produtos = [
     {
         id: 1,
         nome: "Ovo P",
-        preco: 35.50,
+        preco: 20.0,
         img:  "/download.jpg",
         quantidade: 10,
         sabor: ''
@@ -20,7 +20,7 @@ export const produtos = [
     {
         id: 2,
         nome: "Ovo M",
-        preco: 30.50,
+        preco: 35.50,
         img:  "/download.jpg",
         quantidade: 10,
         sabor: ''
@@ -28,7 +28,7 @@ export const produtos = [
     {
         id: 3,
         nome: "Ovo G",
-        preco: 35,
+        preco: 40.50,
         img:  "/download.jpg",
         quantidade: 10,
         sabor: ''
@@ -36,7 +36,7 @@ export const produtos = [
     {
         id: 4,
         nome: "Ovo GG",
-        preco: 40,
+        preco: 55.90,
         img:  "/download.jpg",
         quantidade: 10,
         sabor: ''
@@ -45,12 +45,12 @@ export const produtos = [
 
 
 export  const list = [
-{sabor: "Escolha aqui"},
-{sabor: "PP"},
-{sabor: "P"},
-{sabor: "M"},
-{sabor: "G"},
-{sabor: "GG"}
+{sabor: "Sabores"},
+{sabor: "MM"},
+{sabor: "KITKAT"},
+{sabor: "OREO"},
+{sabor: "NINHO C/ NUTELLA"},
+{sabor: "FERREIRO"}
 ]
 
 export const datas = [

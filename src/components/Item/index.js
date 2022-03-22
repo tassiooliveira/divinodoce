@@ -1,33 +1,32 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
-
+import { list } from '../../database'
 
 
 
 
 function Item({produtos}) {
 
-    const { onclickitem, adicionar } = useContext(CartContext)
+    const {  adicionar} = useContext(CartContext)
     
-    // const itemprecoBRL = produtos.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+     const itemprecoBRL = produtos.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
     return (
         
         
         
-        <li onClick={() => onclickitem(produtos)} className='item-produtos'>
+        <li  className='item-produtos'>
         
         <img alt='imagem do produto' src={produtos.img}></img>
         <h2>{produtos.nome}</h2>
         <div className='div-sabor'>
-        <h5>TAMANHOS</h5>
-        <span>PP</span>
-        <span>P</span>
-        <span>M</span>
-        <span>G</span>
-        <span>GG</span>
+        <h4>{itemprecoBRL}</h4>
         </div>
-        <button className='botaopadrao' onClick={() => adicionar(produtos)} > Adicionar </button>
+        <span>Escolha o sabor:</span>
+        <select onChange={onchange} id={produtos.id} name="select">
+        {list.map((sabor, index) => <option  key={index} value={sabor.sabor}>{sabor.sabor}</option> )}
+        </select>
+        <button className='botaopadrao'  onClick={() => adicionar(produtos)} > Adicionar </button>
         </li>
     )
     

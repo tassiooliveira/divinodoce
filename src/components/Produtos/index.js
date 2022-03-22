@@ -18,7 +18,6 @@ function Produtos() {
         <div className='produtos-itens-div'>
         {produtos.map(( produtos, index) => <Item key={index} produtos={produtos}/>) }
         </div>
-        {/* <Modalitem produtos={produtos}/> */}
         </>
         
     )

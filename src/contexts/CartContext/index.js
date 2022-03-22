@@ -5,20 +5,14 @@ export const CartContext = createContext({})
 export const CartProvider = ({ children }) => {
 
 
-    const [indexitem, setIndexitem] = useState(0)
     const [modal, setModal] = useState('modal-none')
-    const [modalitem, setModalitem] = useState('modal-noneitem')
-    const [saborescolhido, setSaborescolhido] = useState()
     const [dataescolhida, setDataescolhida] = useState("0")
     const [datanomeescolhida, setDatanomeescolhida] = useState("04/04/2022")
     const [carrinho, setCarrinho] = useState([])
     const totalPreco = carrinho.reduce((acc, current)=> acc + current.preco,0)
     const totalprecoBRL = totalPreco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    
 
-
-    function onchange(e){
-        setSaborescolhido(e.target.value)
-    }
 
     function onchangedata(e){
         setDataescolhida(e.target.value)
@@ -31,15 +25,7 @@ export const CartProvider = ({ children }) => {
        
     }
 
-    function onclickitem(item) {
-        setIndexitem(item.id)
-        setModalitem('modalitem')
-    }
-    function fecharmodalitem() {
-        setModalitem('modal-noneitem')
-    }
-
-
+    
     function abrirmodal() {
         setModal('modal')
     }
@@ -47,22 +33,36 @@ export const CartProvider = ({ children }) => {
         setModal('modal-none')
     }
 
+
+
     function adicionar(item) {
-        const itemcart = { 
-            id: item.id,
-            nome: item.nome,
-            preco: item.preco,
-            img: item.img,
-            quantidade: item.quantidade,
-            sabor: saborescolhido}
-         if (item.quantidade>0) {
-            setCarrinho([...carrinho,itemcart]) 
-         } else {
-            alert('Produto fora do estoque')
-       }
+        const itemid = item.id.toString();
+        const pegarsabor = document.getElementById(itemid).value
+
+        if (pegarsabor !== 'Sabores') {
+            alert('Item adicionado ao carrinho!')
+            const itemcart = { 
+                id: item.id,
+                nome: item.nome,
+                preco: item.preco,
+                img: item.img,
+                quantidade: item.quantidade, 
+                sabor: pegarsabor}
+             if (item.quantidade>0) {
+                setCarrinho([itemcart,...carrinho]) 
+             } else {
+                alert('Produto fora do estoque!')
+           }
         
-        
+           }else {
+               alert('Escolha o sabor do produto!')
+           }
+            
+          
+       
     }
+
+   
 
     function remover(clickItemIndex){
         const filteredCart = carrinho.filter( (itemselect) => carrinho.indexOf(itemselect) !== clickItemIndex)
@@ -80,6 +80,6 @@ export const CartProvider = ({ children }) => {
     
     
     return (
-     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, onchange, modal, abrirmodal, fecharmodal, onchangedata, dataescolhida, datanomeescolhida, onclickitem, fecharmodalitem, modalitem, indexitem}}>{children}</CartContext.Provider>
+     <CartContext.Provider value={{carrinho, adicionar, remover, finalizar, totalprecoBRL, onchange, modal, abrirmodal, fecharmodal, onchangedata, dataescolhida, datanomeescolhida, onmouseover}}>{children}</CartContext.Provider>
     )
 }
