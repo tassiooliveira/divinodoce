@@ -15,9 +15,9 @@ function Carrinho() {
 
 
   return (
-    <>
+    <div className='carrinho'>
     <Modal/>
-  <h2 className="h2-titulo-ovos">{titulocarrinho} ({carrinho.length})</h2>
+    <h2 className="h2-titulo-ovos">{titulocarrinho} ({carrinho.length})</h2>
       
       <div className='carrinho-itens-div'>
       {carrinho.map(( carrinho, index) =>  <Itemcarrinho key={index} itemIndex={index} carrinho={carrinho}/>) }
@@ -30,7 +30,7 @@ function Carrinho() {
       </div>
       </div>
       
-    </>
+    </div>
     
       
   );
